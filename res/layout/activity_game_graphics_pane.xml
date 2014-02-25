@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/gameGraphicsPaneTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:textSize="20dip"/>
+
+    <RelativeLayout
+        android:id="@+id/gameGraphicsChartLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/gameGraphicsPaneTitle" 
+        android:fillViewport="true"
+        android:gravity="center"
+        android:layout_margin="5dip"/>
+
+</RelativeLayout>

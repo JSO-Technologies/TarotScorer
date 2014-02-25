@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_nouveau"
+        android:icon="@drawable/nouveau"
+        android:orderInCategory="100"
+        android:title="@string/menu_nouveau"/>
+    <item
+        android:id="@+id/menu_fin"
+        android:icon="@drawable/fin"
+        android:orderInCategory="200"
+        android:title="@string/menu_fin"/>
+    <item
+        android:id="@+id/menu_score"
+        android:icon="@drawable/score"
+        android:orderInCategory="300"
+        android:title="@string/menu_score"/>
+
+</menu>

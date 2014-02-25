@@ -1,0 +1,160 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/fond_accueil">
+    
+    <com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="a1507aab2d0d0f2"
+        ads:loadAdOnCreate="true" />
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/adView" >
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/detailledScoreButtonLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dip"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/detailledScoreRetourButton"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="100dip"
+                    android:layout_height="30dip"
+                    android:text="@string/retour" />
+
+                <Button
+                    android:id="@+id/detailledScoreAnnulerButton"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="100dip"
+                    android:layout_height="30dip"
+                    android:text="@string/cancel"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/detailledScoreLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detailledScoreButtonLayout"
+                android:layout_margin="10dip" 
+                android:background="#DD000000">
+
+                <TableRow
+                    android:id="@+id/detailledScoreHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/detailledScorePlayer1Pseudo"
+                        style="@style/detailled_score_header"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/detailledScorePlayer2Pseudo"
+                        style="@style/detailled_score_header"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/detailledScorePlayer3Pseudo"
+                        style="@style/detailled_score_header"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/detailledScorePlayer4Pseudo"
+                        style="@style/detailled_score_header"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/detailledScorePlayer5Pseudo"
+                        style="@style/detailled_score_header"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/detailledScorePhotos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/detailledScorePlayer1PhotoImageView"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dip"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/player_photo"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:id="@+id/detailledScorePlayer2PhotoImageView"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dip"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/player_photo"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:id="@+id/detailledScorePlayer3PhotoImageView"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dip"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/player_photo"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:id="@+id/detailledScorePlayer4PhotoImageView"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dip"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/player_photo"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:id="@+id/detailledScorePlayer5PhotoImageView"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dip"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/player_photo"
+                        android:scaleType="fitXY" />
+                </TableRow>
+            </TableLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fond_accueil" >
+
+    <com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="a1507aab2d0d0f2"
+        ads:loadAdOnCreate="true" />
+
+    <TableLayout
+        android:id="@+id/aProposTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adView"
+        android:layout_marginTop="30dip" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2" >
+
+            <TextView
+                style="@style/a_propos_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/a_propos_application" />
+
+            <TextView
+                style="@style/a_propos_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="@string/a_propos_application_name" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2" >
+
+            <TextView
+                style="@style/a_propos_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/a_propos_version" />
+
+            <TextView
+                style="@style/a_propos_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="@string/a_propos_version_value" />
+        </TableRow>
+    </TableLayout>
+
+    <View
+        android:id="@+id/aProposHR1"
+        style="@style/priseHR"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/aProposTableLayout"
+        android:layout_marginBottom="5dip"
+        android:layout_marginTop="20dip" />
+
+    <TextView
+        android:id="@+id/aProposContact"
+        style="@style/a_propos_normal_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aProposHR1"
+        android:gravity="center"
+        android:text="@string/a_propos_contact" />
+
+    <View
+        android:id="@+id/aProposHR2"
+        style="@style/priseHR"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/aProposContact"
+        android:layout_marginBottom="5dip"
+        android:layout_marginTop="5dip" />
+
+    <TextView
+        android:id="@+id/aProposInstruction"
+        style="@style/a_propos_normal_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aProposHR2"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:gravity="center"
+        android:text="@string/a_propos_instruction" />
+
+    <TextView
+        android:id="@+id/aProposMail"
+        style="@style/home_button_text"
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:layout_below="@+id/aProposInstruction"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/home_button"
+        android:gravity="center"
+        android:padding="10dip"
+        android:text="@string/a_propos_mail" />
+
+</RelativeLayout>

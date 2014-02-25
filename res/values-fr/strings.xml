@@ -1,0 +1,176 @@
+<resources>
+
+    <string name="app_name">Tarot Scorer</string>
+    <string name="menu_settings">Settings</string>
+
+    <!-- Activities -->
+    <string name="title_activity_home_page">Accueil</string>
+    <string name="title_activity_prise">PriseActivity</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="title_activity_players_config">PlayersConfigActivity</string>
+    <string name="title_activity_create_player">CreatePlayerActivity</string>
+    <string name="title_activity_modify_player">ModifyPlayerActivity</string>
+    <string name="title_activity_detailled_score">PriseDetailledScoreActivity</string>
+    <string name="title_activity_players_list">PlayersListActivity</string>
+    <string name="title_activity_stat_player">StatPlayerActivity</string>
+    <string name="title_activity_stat_classement">Classement</string>
+    <string name="title_activity_a_propos">A Propos</string>
+    <string name="title_activity_game_graphics">Analyse</string>
+    <string name="title_activity_game_list">GameListActivity</string>
+    
+     <!-- Menu -->
+    <string name="menu_nouveau">Nouvelle partie</string>
+    <string name="menu_fin">Fin de partie</string>
+    <string name="menu_score">Score</string>
+    <string name="details">Détails</string>
+    <string name="delete">Supprimer</string>
+    
+    <!-- Descriptions -->
+    <string name="wallpaper">Fond d\'écran</string>
+    <string name="splash">Splash screen</string>
+    <string name="no_photo">Pas de photo</string>
+    <string name="player_photo">Photo du joueur</string>
+
+    <!-- Instructions -->
+    <string name="enter_players_name_and_number"> Entrer le nombre de joueurs et leurs noms. \nNouveau joueur : cliquer sur une des images.</string>
+    <string name="threePlayers">3</string>
+    <string name="fourPlayers">4</string>
+    <string name="fivePlayers">5</string>
+    <string name="playerName">Nom du joueur</string>
+    <string name="newPlayer">Nouveau</string>
+    <string name="preneur">Preneur</string>
+    <string name="appel">Appel</string>
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="ninety_one">91</string>
+    <string name="startingPoints">0 / 91</string>
+    <string name="prise">Prise : </string>
+    <string name="points">Points : </string>
+    <string name="oudler">Bouts : </string>
+    <string name="petite_au_bout">Petite au bout : </string>
+    <string name="poignee">Poignée : </string>
+    <string name="chelem">Chelem : </string>
+    <string name="options">- Options -</string>
+    <string name="total">Total</string>
+    <string name="areYouSure">Êtes-vous sûr ?</string>
+    <string name="closeApp">Quittez l\'application ?</string>
+    <string name="sureToDeletePlayer">Supprimer le joueur ?</string>
+    <string name="sureToResetPlayer">Supprimer toutes les parties jouées par ce joueur ? Les stats d\'autres joueurs seront impactés.</string>
+    <string name="loadGame">Charger cette partie ?</string>
+    <string name="gameFinished">Partie terminée</string>
+    <string name="waiting">Chargement, veuillez patienter…</string>
+    <string name="no_player">Pas de joueurs créés</string>
+    <string name="player_details">Sélectionner un joueur pour afficher les détails</string>
+    <string name="no_game">Pas de partie jouée</string>
+    <string name="launch_game">Sélectionner une partie pour la continuer</string>
+    <string name="mail_copied">Adresse email copiée</string>
+    <string name="prise_score_shortcut">Score détaillé</string>
+    <string name="prise_graphics_shortcut">Analyse</string>
+    
+    <!-- Classement -->
+    <string name="classement_filtre_shortcut">Filtre joueurs</string>
+    <string name="all_none">Tous/Aucun</string>
+    
+    <!-- Statistiques de joueurs -->
+    <string name="stat_general">Statistiques générales</string>
+    <string name="nb_game">Nombre de parties</string>
+    <string name="nb_winning_game">Nombre de parties gagnées</string>
+    <string name="nb_prise">Nombre de prises</string>
+    <string name="average_prise">Nombre moyen de prises par partie</string>
+    <string name="nb_petite">Petite</string>
+    <string name="nb_garde">Garde</string>
+    <string name="nb_garde_sans">Garde Sans</string>
+    <string name="nb_garde_contre">Garde Contre</string>
+    <string name="average_place">Place moyenne au score final</string>
+    <string name="stat_win">Statistiques des Gains</string>
+    <string name="max_winning_prise">Type de prise le plus gagné</string>
+    <string name="average_winning_points">Faites de combien en moyenne</string>
+    <string name="max_winning_points">Faites de combien au max</string>
+    <string name="stat_loose">Statistiques des Pertes</string>
+    <string name="max_loosing_prise">Type de prise le plus perdu</string>
+    <string name="average_loosing_points">Perdues de combien en moyenne</string>
+    <string name="max_loosing_points">Perdues de combien au max</string>
+    <string name="won_games">gagnée(s)</string>
+    <string name="lost_games">perdue(s)</string>
+    
+    <!-- Boutons accueil -->
+    <string name="new_game">Nouveau Jeu</string>
+    <string name="player_list">Liste des joueurs</string>
+    <string name="classement">Classement</string>
+    <string name="game_list">Liste des parties</string>
+	<string name="a_propos">A Propos</string>
+
+    <!-- Petite au bout -->
+    <string name="no">Non</string>
+    <string name="yes">Oui</string>
+    <string name="lost">Perdu</string>
+
+    <!-- Poignee -->
+    <string name="simple_poignee">Simple</string>
+    <string name="double_poignee">Double</string>
+    <string name="triple_poignee">Triple</string>
+
+    <!-- Prise -->
+    <string name="petite">Petite</string>
+    <string name="garde">Garde</string>
+    <string name="garde_sans">Garde Sans</string>
+    <string name="garde_contre">Garde Contre</string>
+
+    <!-- Chelem -->
+    <string name="no_chelem">Non</string>
+    <string name="announced_chelem">Annoncé</string>
+    <string name="not_announced_chelem">Non annoncé</string>
+    <string name="chelem_lost">Perdu</string>
+
+    <!-- Boutons -->
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
+    <string name="retour">Retour</string>
+    <string name="finish">Terminé</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+
+    <!-- Messages -->
+    <string name="prise_contract_succeed">Contrat réussi de %d point(s)</string>
+    <string name="prise_contract_succeed_failed">Contrat chut de %d point(s)</string>
+    <string name="no_prise_played">Pas de partie jouée</string>
+
+    <!-- Erreurs -->
+    <string name="pseudo_empty">Veuillez entrer le nom du joueur</string>
+    <string name="pseudo_exists">Le nom entré existe déjà pour un autre joueur</string>
+    <string name="pseudo_not_authorised">Le nom entré n\'est pas autorisé</string>
+    <string name="select_all_players">Veuillez créer/sélectionner tous les joueurs</string>
+    <string name="photo_not_supported">La prise de photo n\'est pas disponible</string>
+    <string name="crop_not_supported">La découpe des photos n\'est pas disponible</string>
+    <string name="preneur_not_checked">Veuillez sélectionner le preneur</string>
+    <string name="call_not_checked">Veuillez sélectionner le joueur appelé</string>
+    
+    <!-- A propos -->
+    <string name="a_propos_application">Application : </string>
+    <string name="a_propos_application_name">Tarot Scorer</string>
+    <string name="a_propos_version">Version : </string>
+    <string name="a_propos_version_value">3.1</string>
+    <string name="a_propos_instruction">Si vous trouvez une anomalie ou si vous avez une idée d\'amélioration de l\'application, n\'hésitez pas à envoyer un mail aux coodonnées</string> 
+    <string name="a_propos_contact">Contact</string>
+    <string name="a_propos_mail">Mail : jso.technologies@gmail.com</string>
+    
+    <!-- Classement -->
+    <string name="classement_players">Joueur</string>
+    <string name="classement_average_place">Place moyenne</string>
+    <string name="classement_nb_won_game">Parties gagnées</string>
+    <string name="classement_nb_lost_game">Parties perdues</string>
+    <string name="classement_nb_won_prise">Prises gagnées</string>
+    <string name="classement_nb_lost_prise">Prises perdues</string>
+ 
+    <!-- Analyse -->
+    <string name="prises_by_player">Répartition des prises par joueur</string>
+    <string name="prises_by_type">Répartition des prises par type</string>
+    <string name="scores_evolution">Evolution des scores</string>
+    
+    <!-- Action profils -->
+    <string name="edit_player">Modifier joueur</string>
+    <string name="reset_player">Réinitialisation</string>
+    <string name="delete_player">Supprimer joueur</string>
+</resources>

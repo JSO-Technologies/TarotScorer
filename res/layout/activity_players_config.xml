@@ -1,0 +1,305 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fond" >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/instructionTextView"
+            style="@style/player_config_instruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/around_border"
+            android:gravity="center"
+            android:text="@string/enter_players_name_and_number" />
+
+        <LinearLayout
+            android:id="@+id/nbPlayers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/instructionTextView"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="8" >
+
+            <TextView
+                android:id="@+id/threeTextView"
+                style="@style/player_config_instruction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:text="@string/threePlayers" />
+
+            <TextView
+                android:id="@+id/fourTextView"
+                style="@style/player_config_instruction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:text="@string/fourPlayers" />
+
+            <TextView
+                android:id="@+id/fiveTextView"
+                style="@style/player_config_instruction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="left"
+                android:text="@string/fivePlayers" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/nbPlayers"
+            android:layout_marginTop="0dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+
+            <SeekBar
+                android:id="@+id/nbPlayerSeekBar"
+                style="@style/CustomSeekBar"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:max="2"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip"
+                android:progress="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/playersNameRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/seekBar"
+            android:baselineAligned="false"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="2" >
+
+            <LinearLayout
+                android:id="@+id/players1Group"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4" >
+
+                    <ImageView
+                        android:id="@+id/photo1"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/no_photo"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/no_photo_create" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/player1"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/players2Group"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4" >
+
+                    <ImageView
+                        android:id="@+id/photo2"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/no_photo"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/no_photo_create" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/player2"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dip" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/playersNameRow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/playersNameRow1"
+            android:baselineAligned="false"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="2" >
+
+            <LinearLayout
+                android:id="@+id/players3Group"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4" >
+
+                    <ImageView
+                        android:id="@+id/photo3"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/no_photo"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/no_photo_create" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/player3"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/players4Group"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4" >
+
+                    <ImageView
+                        android:id="@+id/photo4"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/no_photo"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/no_photo_create" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/player4"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dip" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/playersNameRow3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/playersNameRow2"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2" >
+
+            <LinearLayout
+                android:id="@+id/players5Group"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4" >
+
+                    <ImageView
+                        android:id="@+id/photo5"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/no_photo"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/no_photo_create" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/player5"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/validPlayerConfigButton"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="100dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ok" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_details"
+        android:icon="@drawable/details"
+        android:orderInCategory="100"
+        android:title="@string/details"/>
+    <item
+        android:id="@+id/menu_trash"
+        android:icon="@drawable/trash"
+        android:orderInCategory="200"
+        android:title="@string/delete"/>
+
+</menu>

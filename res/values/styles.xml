@@ -1,0 +1,188 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+    <!-- Splash screen -->
+    <style name="Theme.Transparent" parent="android:Theme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@style/Animations.SplashScreen</item>
+    </style>
+
+    <style name="Animations.SplashScreen" parent="@android:Animation">
+        <item name="android:windowEnterAnimation">@anim/splash_appear</item>
+        <item name="android:windowExitAnimation">@anim/splash_disappear</item>
+    </style>
+
+    <!-- Général : TextView -->
+    <style name="home_button_text">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="player_config_instruction">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="prise_normal_text">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+    </style>
+
+    <style name="prise_bold_text">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="prise_option_normal_text">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+    </style>
+
+    <style name="detailled_score_header">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="detailled_score_normal_text">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="item_list_normal_text">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    
+    <style name="item_list_small_text">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    
+    <style name="stat_player_pseudo">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+    </style>
+
+    <style name="stat_player_title">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+    </style>
+    
+    <style name="stat_player_text">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+    </style>
+        
+    <style name="a_propos_normal_text">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+    </style>
+    
+    <style name="classement_normal_text">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">normal</item>
+    </style>
+    
+    <!-- TextView -->
+    <style name="orientedTextStyle" parent="android:Widget.TextView">
+        <item name="android:textSize">14dip</item>
+    </style>
+
+    <!-- Général : SeekBar -->
+    <style name="CustomSeekBar" parent="android:Widget.SeekBar">
+        <item name="android:minHeight">5dip</item>
+        <item name="android:maxHeight">5dip</item>
+        <item name="android:progressDrawable">@drawable/blue_seekbar</item>
+        <item name="android:thumb">@drawable/blue_seekbar_thumb</item>
+        <item name="android:thumbOffset">15dip</item>
+    </style>
+    
+     <!-- Général : ProgressBar -->
+    <style name="TextProgressBar" parent="android:Widget.SeekBar">
+        <item name="android:minHeight">20dip</item>
+        <item name="android:maxHeight">20dip</item>
+        <item name="android:progressDrawable">@drawable/green_red_progressbar</item>
+    </style>
+
+    <!-- Général : RadioButton -->
+    <style name="BlueRadioButton" parent="android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/blue_radio_button</item>
+        <item name="android:drawSelectorOnTop">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Général : small RadioButton -->
+    <style name="BlueSmallRadioButton" parent="android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/blue_small_radio_button</item>
+        <item name="android:drawSelectorOnTop">true</item>
+        <item name="android:textSize">12dip</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:paddingLeft">20dip</item>
+        <item name="android:paddingRight">10dip</item>
+    </style>
+
+    <!-- Général : Spinner -->
+    <style name="CustomSpinner" parent="@android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:textSize">11dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- HR -->
+    <style name="priseHR">
+        <item name="android:background">#999999</item>
+        <item name="android:layout_marginLeft">20dip</item>
+        <item name="android:layout_marginRight">20dip</item>
+    </style>
+
+    <style name="detailledScoreHR">
+        <item name="android:background">#999999</item>
+        <item name="android:layout_marginLeft">20dip</item>
+        <item name="android:layout_marginRight">20dip</item>
+    </style>
+	<style name="statPlayerHR">
+        <item name="android:background">#999999</item>
+        <item name="android:layout_marginLeft">20dip</item>
+        <item name="android:layout_marginRight">20dip</item>
+    </style>
+    
+	<style name="classementHR">
+        <item name="android:background">#999999</item>
+        <item name="android:layout_marginLeft">0dip</item>
+        <item name="android:layout_marginRight">0dip</item>
+    </style>
+</resources>

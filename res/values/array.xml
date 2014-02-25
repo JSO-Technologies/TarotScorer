@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="priseArray">
+    <item>@string/petite</item>
+    <item>@string/garde</item>
+    <item>@string/garde_sans</item>
+    <item>@string/garde_contre</item>
+</string-array>
+    
+</resources>

@@ -1,0 +1,912 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fond" >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/priseShortcutLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:baselineAligned="false"
+            android:layout_marginRight="10dip"
+            android:layout_marginLeft="10dip"
+            android:gravity="right"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/priseScoreShorcut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/prise_score_shortcut"
+                android:scaleType="fitCenter"
+                android:src="@drawable/detailled_score_icone" />
+            
+             <ImageView
+                android:id="@+id/priseAnalyseShorcut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/prise_graphics_shortcut"
+                android:scaleType="fitCenter"
+                android:src="@drawable/graphiques_icone" />
+        </LinearLayout>
+
+        <!-- Joueurs -->
+
+        <LinearLayout
+            android:id="@+id/prisePlayersLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/priseShortcutLayout"
+            android:baselineAligned="false"
+            android:gravity="clip_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="5" >
+
+            <LinearLayout
+                android:id="@+id/prisePlayers1Layout"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/prisePlayer1PhotoImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/player_photo"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/no_photo" />
+
+                <TextView
+                    android:id="@+id/prisePlayer1PseudoTextView"
+                    style="@style/prise_normal_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/playerName" />
+
+                <TextView
+                    android:id="@+id/prisePlayer1ScoreTextView"
+                    style="@style/prise_bold_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/zero" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/prisePlayers2Layout"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/prisePlayer2PhotoImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/player_photo"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/no_photo" />
+
+                <TextView
+                    android:id="@+id/prisePlayer2PseudoTextView"
+                    style="@style/prise_normal_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/playerName" />
+
+                <TextView
+                    android:id="@+id/prisePlayer2ScoreTextView"
+                    style="@style/prise_bold_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/zero" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/prisePlayers3Layout"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/prisePlayer3PhotoImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/player_photo"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/no_photo" />
+
+                <TextView
+                    android:id="@+id/prisePlayer3PseudoTextView"
+                    style="@style/prise_normal_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/playerName" />
+
+                <TextView
+                    android:id="@+id/prisePlayer3ScoreTextView"
+                    style="@style/prise_bold_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/zero" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/prisePlayers4Layout"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/prisePlayer4PhotoImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/player_photo"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/no_photo" />
+
+                <TextView
+                    android:id="@+id/prisePlayer4PseudoTextView"
+                    style="@style/prise_normal_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/playerName" />
+
+                <TextView
+                    android:id="@+id/prisePlayer4ScoreTextView"
+                    style="@style/prise_bold_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/zero" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/prisePlayers5Layout"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/prisePlayer5PhotoImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/player_photo"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/no_photo" />
+
+                <TextView
+                    android:id="@+id/prisePlayer5PseudoTextView"
+                    style="@style/prise_normal_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/playerName" />
+
+                <TextView
+                    android:id="@+id/prisePlayer5ScoreTextView"
+                    style="@style/prise_bold_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/zero" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- preneur -->
+
+        <TextView
+            android:id="@+id/prisePreneurTextView"
+            style="@style/prise_normal_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prisePlayersLayout"
+            android:gravity="center"
+            android:text="@string/preneur" />
+
+        <View
+            android:id="@+id/priseHRView"
+            style="@style/priseHR"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/prisePreneurTextView" />
+
+        <RadioGroup
+            android:id="@+id/prisePreneursRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/priseHRView"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="5" >
+
+            <RelativeLayout
+                android:id="@+id/prisePreneur1RadioLayout"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone" >
+
+                <RadioButton
+                    android:id="@+id/prisePreneur1RadioButton"
+                    style="@style/BlueRadioButton"
+                    android:layout_width="20dip"
+                    android:layout_height="20dip"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/prisePreneur2RadioLayout"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone" >
+
+                <RadioButton
+                    android:id="@+id/prisePreneur2RadioButton"
+                    style="@style/BlueRadioButton"
+                    android:layout_width="20dip"
+                    android:layout_height="20dip"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/prisePreneur3RadioLayout"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone" >
+
+                <RadioButton
+                    android:id="@+id/prisePreneur3RadioButton"
+                    style="@style/BlueRadioButton"
+                    android:layout_width="20dip"
+                    android:layout_height="20dip"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/prisePreneur4RadioLayout"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone" >
+
+                <RadioButton
+                    android:id="@+id/prisePreneur4RadioButton"
+                    style="@style/BlueRadioButton"
+                    android:layout_width="20dip"
+                    android:layout_height="20dip"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/prisePreneur5RadioLayout"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone" >
+
+                <RadioButton
+                    android:id="@+id/prisePreneur5RadioButton"
+                    style="@style/BlueRadioButton"
+                    android:layout_width="20dip"
+                    android:layout_height="20dip"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+        </RadioGroup>
+
+        <!-- Co-équipier -->
+
+        <RelativeLayout
+            android:id="@+id/priseAppelLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prisePreneursRadioGroup"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/priseAppelTextView"
+                style="@style/prise_normal_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/appel" />
+
+            <View
+                android:id="@+id/priseAppelHR"
+                style="@style/priseHR"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/priseAppelTextView" />
+
+            <RadioGroup
+                android:id="@+id/priseAppelRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/priseAppelHR"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="5" >
+
+                <RelativeLayout
+                    android:id="@+id/priseAppel1RadioLayout"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <RadioButton
+                        android:id="@+id/priseAppel1RadioButton"
+                        style="@style/BlueRadioButton"
+                        android:layout_width="20dip"
+                        android:layout_height="20dip"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/priseAppel2RadioLayout"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <RadioButton
+                        android:id="@+id/priseAppel2RadioButton"
+                        style="@style/BlueRadioButton"
+                        android:layout_width="20dip"
+                        android:layout_height="20dip"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/priseAppel3RadioLayout"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <RadioButton
+                        android:id="@+id/priseAppel3RadioButton"
+                        style="@style/BlueRadioButton"
+                        android:layout_width="20dip"
+                        android:layout_height="20dip"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/priseAppel4RadioLayout"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <RadioButton
+                        android:id="@+id/priseAppel4RadioButton"
+                        style="@style/BlueRadioButton"
+                        android:layout_width="20dip"
+                        android:layout_height="20dip"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/priseAppel5RadioLayout"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <RadioButton
+                        android:id="@+id/priseAppel5RadioButton"
+                        style="@style/BlueRadioButton"
+                        android:layout_width="20dip"
+                        android:layout_height="20dip"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+            </RadioGroup>
+        </RelativeLayout>
+
+        <!-- Prise -->
+
+        <LinearLayout
+            android:id="@+id/priseSpinnerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/priseAppelLayout"
+            android:layout_marginTop="10dip"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="32" >
+
+            <TextView
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="@string/prise" />
+
+            <Spinner
+                android:id="@+id/priseSpinner"
+                style="@style/CustomSpinner"
+                android:layout_width="0dip"
+                android:layout_height="35dip"
+                android:layout_weight="22" />
+        </LinearLayout>
+
+        <!-- Nombre de points -->
+
+        <LinearLayout
+            android:id="@+id/priseNbPointsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/priseSpinnerLayout"
+            android:layout_marginTop="5dip"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="16" >
+
+            <TextView
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="right"
+                android:text="@string/zero" />
+
+            <TextView
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/prisePointsMinusTextView"
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/around_border"
+                android:gravity="center"
+                android:text="@string/minus" />
+
+            <TextView
+                android:id="@+id/priseSelectedPointsTextView"
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:text="@string/startingPoints" />
+
+            <TextView
+                android:id="@+id/prisePointsPlusTextView"
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/around_border"
+                android:gravity="center"
+                android:text="@string/plus" />
+
+            <TextView
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="" />
+
+            <TextView
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="@string/ninety_one" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/prisePointSeekBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/priseNbPointsLayout"
+            android:layout_marginTop="5dip"
+            android:gravity="center|right"
+            android:orientation="horizontal"
+            android:weightSum="32" >
+
+            <TextView
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="@string/points" />
+
+            <SeekBar
+                android:id="@+id/prisePointsSeekBar"
+                style="@style/CustomSeekBar"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:max="91"
+                android:paddingLeft="15dip"
+                android:paddingRight="19dip"
+                android:progress="0" />
+        </LinearLayout>
+
+        <!-- Nombre de bouts -->
+
+        <LinearLayout
+            android:id="@+id/priseNbOudlersLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prisePointSeekBarLayout"
+            android:layout_marginTop="5dip"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="16" >
+
+            <TextView
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="right"
+                android:text="@string/zero" />
+
+            <TextView
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.5"
+                android:gravity="right"
+                android:text="@string/one" />
+
+            <TextView
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="3" />
+
+            <TextView
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.5"
+                android:gravity="left"
+                android:text="@string/two" />
+
+            <TextView
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="@string/three" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/priseNbOudlersSeekBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/priseNbOudlersLayout"
+            android:layout_marginTop="5dp"
+            android:gravity="center|right"
+            android:orientation="horizontal"
+            android:weightSum="32" >
+
+            <TextView
+                style="@style/prise_normal_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="@string/oudler" />
+
+            <SeekBar
+                android:id="@+id/priseOudlersSeekBar"
+                style="@style/CustomSeekBar"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:max="3"
+                android:paddingLeft="15dip"
+                android:paddingRight="19dip"
+                android:progress="0" />
+        </LinearLayout>
+
+        <!-- Options -->
+
+        <View
+            android:id="@+id/priseOptionsHRView"
+            style="@style/priseHR"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/priseNbOudlersSeekBarLayout"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/priseOptionTextView"
+            style="@style/prise_normal_text"
+            android:layout_width="match_parent"
+            android:layout_height="30dip"
+            android:layout_below="@+id/priseOptionsHRView"
+            android:gravity="center"
+            android:text="@string/options" />
+
+        <View
+            android:id="@+id/priseOptionsHR2View"
+            style="@style/priseHR"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/priseOptionTextView" />
+
+        <RelativeLayout
+            android:id="@+id/priseEmptyOptionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/priseOptionsHR2View"
+            android:background="#DD000000"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/priseOptionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/priseOptionsHR2View"
+            android:background="#DD000000"
+            android:visibility="gone" >
+
+            <!-- Petite au bout -->
+
+            <LinearLayout
+                android:id="@+id/prisePetiteAuBoutLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="16" >
+
+                <TextView
+                    style="@style/prise_option_normal_text"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="@string/petite_au_bout" />
+
+                <RadioGroup
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/prisePasPetiteAuBoutRadio"
+                        style="@style/BlueSmallRadioButton"
+                        android:checked="true"
+                        android:text="@string/no" />
+
+                    <RadioButton
+                        android:id="@+id/prisePetiteAuBoutRadio"
+                        style="@style/BlueSmallRadioButton"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/prisePerduPetiteAuBoutRadio"
+                        style="@style/BlueSmallRadioButton"
+                        android:text="@string/lost" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- Poignée -->
+
+            <View
+                android:id="@+id/priseInOptionsHRView"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/prisePetiteAuBoutLayout"
+                android:layout_marginLeft="30dip"
+                android:layout_marginRight="30dip"
+                android:layout_marginTop="10dp"
+                android:background="#777777" />
+
+            <LinearLayout
+                android:id="@+id/prisePoigneeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/priseInOptionsHRView"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="16" >
+
+                <TextView
+                    style="@style/prise_option_normal_text"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="@string/poignee" />
+
+                <RelativeLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9" >
+
+                    <RadioButton
+                        android:id="@+id/prisePasPoigneeRadio"
+                        style="@style/BlueSmallRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:checked="true"
+                        android:text="@string/no" />
+
+                    <RadioButton
+                        android:id="@+id/priseSimplePoigneeRadio"
+                        style="@style/BlueSmallRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/prisePasPoigneeRadio"
+                        android:layout_alignLeft="@+id/priseTriplePoigneeRadio"
+                        android:text="@string/simple_poignee" />
+
+                    <RadioButton
+                        android:id="@+id/priseDoublePoigneeRadio"
+                        style="@style/BlueSmallRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/prisePasPoigneeRadio"
+                        android:text="@string/double_poignee" />
+
+                    <RadioButton
+                        android:id="@+id/priseTriplePoigneeRadio"
+                        style="@style/BlueSmallRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/priseDoublePoigneeRadio"
+                        android:layout_toRightOf="@+id/priseDoublePoigneeRadio"
+                        android:text="@string/triple_poignee" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- Chelem -->
+
+            <View
+                android:id="@+id/priseInOptionsHR2View"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/prisePoigneeLayout"
+                android:layout_marginLeft="30dip"
+                android:layout_marginRight="30dip"
+                android:layout_marginTop="10dp"
+                android:background="#777777" />
+
+            <LinearLayout
+                android:id="@+id/priseChelemLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/priseInOptionsHR2View"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="16" >
+
+                <TextView
+                    style="@style/prise_option_normal_text"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="@string/chelem" />
+
+                <RelativeLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9" >
+
+                    <RadioButton
+                        android:id="@+id/priseNoChelemRadio"
+                        style="@style/BlueSmallRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:checked="true"
+                        android:text="@string/no_chelem" />
+
+                    <RadioButton
+                        android:id="@+id/priseNotAnnouncedChelemRadio"
+                        style="@style/BlueSmallRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/priseNoChelemRadio"
+                        android:layout_toRightOf="@+id/priseNoChelemRadio"
+                        android:text="@string/not_announced_chelem" />
+
+                    <RadioButton
+                        android:id="@+id/priseAnnoucedChelemRadio"
+                        style="@style/BlueSmallRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/priseNoChelemRadio"
+                        android:text="@string/announced_chelem" />
+
+                    <RadioButton
+                        android:id="@+id/priseLostChelemRadio"
+                        style="@style/BlueSmallRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/priseAnnoucedChelemRadio"
+                        android:layout_toRightOf="@+id/priseAnnoucedChelemRadio"
+                        android:text="@string/chelem_lost" />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/priseFinishGameButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dip"
+            android:layout_height="30dip"
+            android:layout_alignLeft="@+id/priseOptionsHR2View"
+            android:layout_below="@+id/priseOptionLayout"
+            android:layout_marginTop="20dp"
+            android:text="@string/finish" />
+
+        <Button
+            android:id="@+id/priseValidGameButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dip"
+            android:layout_height="30dip"
+            android:layout_alignBaseline="@+id/priseFinishGameButton"
+            android:layout_alignRight="@+id/priseOptionsHR2View"
+            android:text="@string/ok" />
+    </RelativeLayout>
+
+</ScrollView>

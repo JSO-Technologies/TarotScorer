@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/fond_accueil" >
+
+    <Button
+        android:id="@+id/classementPlayersFilterOkButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip"
+        android:text="@string/ok" />
+
+    <CheckBox
+        android:id="@+id/classementPlayersFilterAllNone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/classementPlayersFilterOkButton"
+        android:layout_marginLeft="20dip"
+        android:text="@string/all_none" />
+
+    <ScrollView
+        android:id="@+id/classementPlayersFilterScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/classementPlayersFilterAllNone" >
+
+        <TableLayout
+            android:id="@+id/classementPlayersFilterTableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:background="#22ffffff">
+        </TableLayout>
+    </ScrollView>
+
+</RelativeLayout>

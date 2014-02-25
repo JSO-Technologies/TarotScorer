@@ -1,0 +1,491 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="a1507aab2d0d0f2"
+        ads:loadAdOnCreate="true" />
+
+    <ImageView
+        android:id="@+id/statPlayerPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dip"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/player_photo"
+        android:maxWidth="100dip"
+        android:scaleType="fitCenter" />
+    
+    <ImageView
+        android:id="@+id/modifyPlayerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adView"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:contentDescription="@string/edit_player"
+        android:src="@drawable/editer" 
+        android:layout_alignParentRight="true"/>
+    <ImageView
+        android:id="@+id/resetPlayerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/modifyPlayerButton"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:contentDescription="@string/reset_player"
+        android:src="@drawable/reset" 
+        android:layout_alignParentRight="true"/>
+    <ImageView
+        android:id="@+id/deletePlayerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/resetPlayerButton"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:contentDescription="@string/delete_player"
+        android:src="@drawable/delete" 
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:id="@+id/statPlayerPseudo"
+        style="@style/stat_player_pseudo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/statPlayerPhoto"
+        android:layout_alignBottom="@+id/deletePlayerButton"
+        android:gravity="center" />
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/statPlayerPseudo"
+        android:layout_marginBottom="10dip">
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/statPlayerGeneral"
+                style="@style/stat_player_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/stat_general" />
+
+            <View
+                android:id="@+id/statPlayerHRView"
+                style="@style/statPlayerHR"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/statPlayerGeneral" />
+
+            <TableLayout
+                android:id="@+id/statPlayerGeneralTableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/statPlayerHRView"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip" >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:weightSum="4" >
+
+                    <TextView
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:text="@string/nb_game" />
+
+                    <TextView
+                        android:id="@+id/statPlayerNbGame"
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:weightSum="4" >
+
+                    <TextView
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:text="@string/nb_winning_game" />
+
+                    <TextView
+                        android:id="@+id/statPlayerNbWinningGame"
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:weightSum="4" >
+
+                    <TextView
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:text="@string/average_place" />
+
+                    <TextView
+                        android:id="@+id/statPlayerAveragePlace"
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:weightSum="4" >
+
+                    <TextView
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:text="@string/nb_prise" />
+
+                    <TextView
+                        android:id="@+id/statPlayerNbPrise"
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/statPlayerPriseTypeRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip" >
+
+                    <LinearLayout
+                        android:id="@+id/statPlayerPriseTypePieChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center"
+                    android:weightSum="20" >
+
+                    <com.jso.technologies.tarot.scorer.api.TextProgressBar
+                        android:id="@+id/statPlayerPriseBar"
+                        style="@style/TextProgressBar"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="19" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center"
+                    android:weightSum="20" >
+
+                    <com.jso.technologies.tarot.scorer.api.TextProgressBar
+                        android:id="@+id/statPlayerGardeBar"
+                        style="@style/TextProgressBar"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="19" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center"
+                    android:weightSum="20" >
+
+                    <com.jso.technologies.tarot.scorer.api.TextProgressBar
+                        android:id="@+id/statPlayerGardeSansBar"
+                        style="@style/TextProgressBar"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="19" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:gravity="center"
+                    android:weightSum="20" >
+
+                    <com.jso.technologies.tarot.scorer.api.TextProgressBar
+                        android:id="@+id/statPlayerGardeContreBar"
+                        style="@style/TextProgressBar"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="19" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:weightSum="4" >
+
+                    <TextView
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:text="@string/average_prise" />
+
+                    <TextView
+                        android:id="@+id/statPlayerAveragePrise"
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/statPlayerWinningPrise"
+                style="@style/stat_player_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/statPlayerGeneralTableLayout"
+                android:layout_marginTop="20dip"
+                android:gravity="center"
+                android:text="@string/stat_win" />
+
+            <View
+                android:id="@+id/statPlayerHRView2"
+                style="@style/statPlayerHR"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/statPlayerWinningPrise" />
+
+            <TableLayout
+                android:id="@+id/statPlayerWinningPriseTableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/statPlayerHRView2"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip" >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:weightSum="9" >
+
+                    <TextView
+                        android:id="@+id/testId"
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:gravity="center_vertical"
+                        android:text="@string/max_winning_prise" />
+
+                    <TextView
+                        android:id="@+id/statPlayerMaxWinningPrise"
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:weightSum="9" >
+
+                    <TextView
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:gravity="center_vertical"
+                        android:text="@string/average_winning_points" />
+
+                    <TextView
+                        android:id="@+id/statPlayerAverageWinningPoints"
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:weightSum="9" >
+
+                    <TextView
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:gravity="center_vertical"
+                        android:text="@string/max_winning_points" />
+
+                    <TextView
+                        android:id="@+id/statPlayerMaxWinningPoints"
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/statPlayerLoosingPrise"
+                style="@style/stat_player_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/statPlayerWinningPriseTableLayout"
+                android:layout_marginTop="20dip"
+                android:gravity="center"
+                android:text="@string/stat_loose" />
+
+            <View
+                android:id="@+id/statPlayerHRView3"
+                style="@style/statPlayerHR"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/statPlayerLoosingPrise" />
+
+            <TableLayout
+                android:id="@+id/statPlayerLoosingPriseTableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/statPlayerHRView3"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip" >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:weightSum="9" >
+
+                    <TextView
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:gravity="center_vertical"
+                        android:text="@string/max_loosing_prise" />
+
+                    <TextView
+                        android:id="@+id/statPlayerMaxLoosingPrise"
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:weightSum="9" >
+
+                    <TextView
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:gravity="center_vertical"
+                        android:text="@string/average_loosing_points" />
+
+                    <TextView
+                        android:id="@+id/statPlayerAverageLoosingPoints"
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:weightSum="9" >
+
+                    <TextView
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:gravity="center_vertical"
+                        android:text="@string/max_loosing_points" />
+
+                    <TextView
+                        android:id="@+id/statPlayerMaxLoosingPoints"
+                        style="@style/stat_player_text"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" />
+                </TableRow>
+            </TableLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

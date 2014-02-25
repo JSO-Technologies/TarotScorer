@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fond_accueil" >
+
+    <com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="a1507aab2d0d0f2"
+        ads:loadAdOnCreate="true" />
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/adView"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip" >
+        
+        <LinearLayout
+            android:id="@+id/classement_shortcuts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+             <ImageView
+                android:id="@+id/priseScoreShorcut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/classement_filtre_shortcut"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cocher_decocher" />
+		</LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/classement_table_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:layout_below="@+id/classement_shortcuts"
+            android:weightSum="32" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="12"
+                android:gravity="left|bottom"
+                android:text="@string/classement_players" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3" />
+
+            <com.jso.technologies.tarot.scorer.api.OrientedTextView
+                style="@style/orientedTextStyle"
+                android:layout_width="0dip"
+                android:layout_height="110dip"
+                android:layout_weight="5"
+                android:gravity="bottom|left"
+                android:text="@string/classement_average_place" />
+
+            <com.jso.technologies.tarot.scorer.api.OrientedTextView
+                style="@style/orientedTextStyle"
+                android:layout_width="0dip"
+                android:layout_height="110dip"
+                android:layout_weight="3"
+                android:gravity="bottom|left"
+                android:text="@string/classement_nb_won_game" />
+
+            <com.jso.technologies.tarot.scorer.api.OrientedTextView
+                style="@style/orientedTextStyle"
+                android:layout_width="0dip"
+                android:layout_height="110dip"
+                android:layout_weight="3"
+                android:gravity="bottom|left"
+                android:text="@string/classement_nb_lost_game" />
+
+            <com.jso.technologies.tarot.scorer.api.OrientedTextView
+                style="@style/orientedTextStyle"
+                android:layout_width="0dip"
+                android:layout_height="110dip"
+                android:layout_weight="3"
+                android:gravity="bottom|left"
+                android:text="@string/classement_nb_won_prise" />
+
+            <com.jso.technologies.tarot.scorer.api.OrientedTextView
+                style="@style/orientedTextStyle"
+                android:layout_width="0dip"
+                android:layout_height="110dip"
+                android:layout_weight="3"
+                android:gravity="bottom|left"
+                android:text="@string/classement_nb_lost_prise" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/classementHRView"
+            style="@style/classementHR"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/classement_table_header"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip" />
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/classementHRView" >
+
+            <TableLayout
+                android:id="@+id/classement_table_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#DD000000" >
+            </TableLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</RelativeLayout>
