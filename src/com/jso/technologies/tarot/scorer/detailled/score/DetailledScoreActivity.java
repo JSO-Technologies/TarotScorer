@@ -94,7 +94,7 @@ public class DetailledScoreActivity extends Activity implements ITarotActivity {
 		detailledScorePhotos.add((ImageView) findViewById(R.id.detailledScorePlayer4PhotoImageView));
 		detailledScorePhotos.add((ImageView) findViewById(R.id.detailledScorePlayer5PhotoImageView));
 
-		//�criture des pseudos et photos
+		//Ecriture des pseudos et photos
 		for(int i = 0; i < detailledScorePseudo.size(); ++i) {
 			if(i < game.getPlayers().size()) {
 				Player player = game.getPlayers().get(i);
@@ -180,7 +180,7 @@ public class DetailledScoreActivity extends Activity implements ITarotActivity {
 			TextView scoreTextView = new TextView(this);
 			scoreTextView.setText(score.get(player).toString());
 			scoreTextView.setTextAppearance(getApplicationContext(), R.style.detailled_score_normal_text);
-			LayoutParams param = new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, 1f);
+			LayoutParams param = new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, 100, 1f);
 			scoreTextView.setLayoutParams(param);
 			scoreTextView.setGravity(Gravity.CENTER);
 

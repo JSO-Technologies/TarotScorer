@@ -3,5 +3,7 @@
     android:id="@android:id/text1"
     style="@style/CustomSpinner"
     android:layout_width="match_parent"
-    android:layout_height="24dip"
+    android:layout_height="48dip"
+    android:paddingLeft="20dip"
+    android:textSize="18sp"
     android:gravity="center_vertical"/>

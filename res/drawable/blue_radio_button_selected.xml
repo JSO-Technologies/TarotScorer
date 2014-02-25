@@ -3,8 +3,8 @@
     android:shape="oval" >
 
     <size
-        android:height="20dip"
-        android:width="20dip" />
+        android:height="24dip"
+        android:width="24dip" />
 
     <stroke
         android:width="3dip"
