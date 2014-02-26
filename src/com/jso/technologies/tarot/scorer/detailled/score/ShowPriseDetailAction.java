@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.jso.technologies.tarot.scorer.R;
+import com.jso.technologies.tarot.scorer.common.bean.Player;
 import com.jso.technologies.tarot.scorer.common.bean.Prise;
 import com.jso.technologies.tarot.scorer.common.iface.ITarotElementaryAction;
 
@@ -40,6 +41,16 @@ public class ShowPriseDetailAction implements ITarotElementaryAction {
 		((TextView)dialog.findViewById(R.id.priseDetailsPoignee)).setText(prise.getPoignee().toString());
 		((TextView)dialog.findViewById(R.id.priseDetailsChelem)).setText(prise.getChelem().toString());		
 
+		if(! prise.getMiseres().isEmpty()) {			
+			StringBuilder builder = new StringBuilder();
+			for(Player p : prise.getMiseres()) {
+				builder.append(" - ");
+				builder.append(p.getPseudo());
+			}
+			((TextView)dialog.findViewById(R.id.priseDetailsMisere)).setText(builder.substring(3));		
+		}
+		
+		
 		//action fermeture du dialog
 		((Button)dialog.findViewById(R.id.priseDetailsOkButton)).setOnClickListener(
 				new OnClickListener() {

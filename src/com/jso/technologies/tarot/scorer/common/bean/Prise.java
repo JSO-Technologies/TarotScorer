@@ -1,5 +1,8 @@
 package com.jso.technologies.tarot.scorer.common.bean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -22,6 +25,7 @@ public class Prise implements Parcelable {
 	private PetiteAuBoutEnum petiteAuBout;
 	private PoigneeEnum poignee;
 	private ChelemEnum chelem;
+	private List<Player> miseres;
 	
 	public Prise() {
 		prise = PriseEnum.PETITE;
@@ -30,6 +34,7 @@ public class Prise implements Parcelable {
 		petiteAuBout = PetiteAuBoutEnum.NON;
 		poignee = PoigneeEnum.NON;
 		chelem = ChelemEnum.NON;
+		miseres = new ArrayList<Player>(1);
 	}
 	
 	public Prise(Builder builder) {
@@ -43,6 +48,7 @@ public class Prise implements Parcelable {
 		petiteAuBout = builder.getPetiteAuBout();
 		poignee = builder.getPoignee();
 		chelem = builder.getChelem();
+		miseres = builder.getMiseres();
 	}
 
 	public Prise(Parcel source) {
@@ -129,6 +135,18 @@ public class Prise implements Parcelable {
 		this.chelem = chelem;
 	}
 	
+	public List<Player> getMiseres() {
+		return miseres;
+	}
+	
+	public void addMiseres(Player p) {
+		miseres.add(p);
+	}
+	
+	public void removeMiseres(Player p) {
+		miseres.remove(p);
+	}
+	
 	public boolean isSuccess() {
 		return TarotRules.contractSucceed(nbOudlers, points);
 	}
@@ -159,6 +177,10 @@ public class Prise implements Parcelable {
 		dest.writeInt(petiteAuBout.getId());
 		dest.writeInt(poignee.getId());
 		dest.writeInt(chelem.getId());
+		dest.writeInt(miseres.size());
+		for(Player p : miseres) {
+			dest.writeInt(p.getId());
+		}
 	}
 	
 	public void readFromParcel(Parcel source){
@@ -178,6 +200,11 @@ public class Prise implements Parcelable {
 		petiteAuBout = PetiteAuBoutEnum.fromValue(source.readInt());
 		poignee = PoigneeEnum.fromValue(source.readInt());
 		chelem = ChelemEnum.fromValue(source.readInt());
+		int misereSize = source.readInt();
+		miseres = new ArrayList<Player>(misereSize);
+		for(int i = 0; i < misereSize; ++i) {
+			miseres.add(new Player(source.readInt(), null, null, true));
+		}
 	}
 
 	public static final Parcelable.Creator<Prise> CREATOR =
@@ -208,6 +235,7 @@ public class Prise implements Parcelable {
 		buffer.append("Petite au bout : ");	buffer.append(petiteAuBout);	buffer.append("\n");
 		buffer.append("Poignee : ");		buffer.append(poignee);			buffer.append("\n");
 		buffer.append("Chelem : ");			buffer.append(chelem);			buffer.append("\n");
+		buffer.append("Misères : ");		buffer.append(miseres);			buffer.append("\n");
 		
 		return buffer.toString();
 	}
@@ -235,6 +263,7 @@ public class Prise implements Parcelable {
 		private PetiteAuBoutEnum petiteAuBout;
 		private PoigneeEnum poignee;
 		private ChelemEnum chelem;
+		private List<Player> miseres = new ArrayList<Player>(2);
 		
 		public Builder withId(Integer id) {
 			this.id = id;
@@ -286,6 +315,18 @@ public class Prise implements Parcelable {
 			return this;
 		}
 		
+		public Builder addMisere(Player player) {
+			this.miseres.add(player);
+			return this;
+		}
+
+		public Builder addAllMisere(List<Player> players) {
+			if(players != null) {
+				this.miseres.addAll(players);
+			}
+			return this;
+		}
+		
 		public Prise build() {
 			return new Prise(this);
 		}
@@ -330,6 +371,10 @@ public class Prise implements Parcelable {
 			return chelem;
 		}
 		
+		public List<Player> getMiseres() {
+			return miseres;
+		}
+
 	}
 
 	public void fillPlayers(Activity activity) {
@@ -339,5 +384,11 @@ public class Prise implements Parcelable {
 		if(appel != null && appel.getPseudo() == null) {
 			appel = PlayerRepositoryCache.getById(appel.getId(), activity);
 		}
+		
+		List<Player> filledMiseres = new ArrayList<Player>(miseres.size());
+		for(Player p : miseres) {
+			filledMiseres.add(PlayerRepositoryCache.getById(p.getId(), activity));
+		}
+		miseres = filledMiseres;
 	}
 }

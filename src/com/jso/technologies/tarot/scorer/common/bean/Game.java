@@ -207,7 +207,20 @@ public class Game implements Parcelable {
 				if(prise.getAppel() != null && player.getId().equals(prise.getAppel().getId())) {
 					prise.setAppel(player);
 				}
+				
 			}
+
+			List<Player> miseres = new ArrayList<Player>();
+			for(Player misereux : prise.getMiseres()) {
+				for(Player player : getPlayers()) {					
+					if(player.getId().equals(misereux.getId())) {
+						miseres.add(player);
+						break;
+					}
+				}
+			}
+			prise.getMiseres().clear();
+			prise.getMiseres().addAll(miseres);
 		}
 		
 		for(Player player : getPlayers()) {

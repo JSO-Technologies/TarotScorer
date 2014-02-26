@@ -1,6 +1,7 @@
 package com.jso.technologies.tarot.scorer.prise;
 
 import com.jso.technologies.tarot.scorer.Utils.Constantes;
+import com.jso.technologies.tarot.scorer.Utils.MessageUtils;
 import com.jso.technologies.tarot.scorer.common.bean.Player;
 import com.jso.technologies.tarot.scorer.common.bean.Prise;
 import com.jso.technologies.tarot.scorer.common.enumeration.ChelemEnum;
@@ -12,6 +13,7 @@ import com.jso.technologies.tarot.scorer.common.enumeration.PriseEnum;
 public class PriseElementSelection<T> {
 	protected PriseActivity activity;
 	private Integer elementType;
+	protected boolean remove = false;
 	
 	public PriseElementSelection(PriseActivity priseActivity, Integer type) {
 		activity = priseActivity;
@@ -20,6 +22,7 @@ public class PriseElementSelection<T> {
 	
 	protected void setElementValueInCurrentPrise(T value) {
 		Prise currentPrise = activity.getCurrentPrise();
+		
 		
 		switch (elementType) {
 		case Constantes.PRENEUR_ELEMENT:
@@ -53,7 +56,16 @@ public class PriseElementSelection<T> {
 		case Constantes.CHELEM_ELEMENT:
 			currentPrise.setChelem((ChelemEnum) value);
 			break;
-					
+		
+		case Constantes.MISERE_ELEMENT:
+			if(remove) {
+				currentPrise.removeMiseres((Player) value);
+			}
+			else {
+				currentPrise.addMiseres((Player) value);
+			}
+			break;
+		
 		default:
 			break;
 		}

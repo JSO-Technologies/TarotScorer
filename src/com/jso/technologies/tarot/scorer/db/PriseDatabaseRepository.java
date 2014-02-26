@@ -1,5 +1,6 @@
 package com.jso.technologies.tarot.scorer.db;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.content.ContentValues;
@@ -14,6 +15,8 @@ import com.jso.technologies.tarot.scorer.common.enumeration.PoigneeEnum;
 import com.jso.technologies.tarot.scorer.common.enumeration.PriseEnum;
 
 public class PriseDatabaseRepository extends AbstractDatabaseRepository<Prise> {
+
+	private static final String MISERE_SEPARATOR = ";jso;";
 
 	public PriseDatabaseRepository(Context context) {
 		databaseHelper = new DatabaseHelper(context, null);
@@ -81,6 +84,7 @@ public class PriseDatabaseRepository extends AbstractDatabaseRepository<Prise> {
 		contentValues.put(DatabaseHelper.PRISE_COLUMN_PETITE_AU_BOUT, entite.getPetiteAuBout().getId());
 		contentValues.put(DatabaseHelper.PRISE_COLUMN_POIGNEE, entite.getPoignee().getId());
 		contentValues.put(DatabaseHelper.PRISE_COLUMN_CHELEM, entite.getChelem().getId());
+		contentValues.put(DatabaseHelper.PRISE_COLUMN_MISERE, serializeMiseres(entite));
 		Long id = db.insert(DatabaseHelper.PRISES_TABLE_NAME, null, contentValues);
 		close();
 
@@ -100,6 +104,7 @@ public class PriseDatabaseRepository extends AbstractDatabaseRepository<Prise> {
 		contentValues.put(DatabaseHelper.PRISE_COLUMN_PETITE_AU_BOUT, entite.getPetiteAuBout().getId());
 		contentValues.put(DatabaseHelper.PRISE_COLUMN_POIGNEE, entite.getPoignee().getId());
 		contentValues.put(DatabaseHelper.PRISE_COLUMN_CHELEM, entite.getChelem().getId());
+		contentValues.put(DatabaseHelper.PRISE_COLUMN_MISERE, serializeMiseres(entite));
 		db.update(	DatabaseHelper.PRISES_TABLE_NAME, 
 				contentValues, 
 				DatabaseHelper.PRISE_COLUMN_ID + DatabaseHelper.EQUALS_VARIABLE,
@@ -129,6 +134,7 @@ public class PriseDatabaseRepository extends AbstractDatabaseRepository<Prise> {
 		Integer petiteAuBoutId = c.getInt(DatabaseHelper.PRISE_NUM_COLUMN_PETITE_AU_BOUT);
 		int poigneeId = c.getInt(DatabaseHelper.PRISE_NUM_COLUMN_POIGNEE);
 		int chelemId = c.getInt(DatabaseHelper.PRISE_NUM_COLUMN_CHELEM);
+		String miseresIds = c.getString(DatabaseHelper.PRISE_NUM_COLUMN_MISERE);
 		
 		return Prise.builder()
 				.withId(id)
@@ -141,6 +147,7 @@ public class PriseDatabaseRepository extends AbstractDatabaseRepository<Prise> {
 				.withPetiteAuBout(PetiteAuBoutEnum.fromValue(petiteAuBoutId))
 				.withPoignee(PoigneeEnum.fromValue(poigneeId))
 				.withChelem(ChelemEnum.fromValue(chelemId))
+				.addAllMisere(deserializeMiseres(miseresIds))
 				.build();
 	}
 
@@ -157,7 +164,8 @@ public class PriseDatabaseRepository extends AbstractDatabaseRepository<Prise> {
 									DatabaseHelper.PRISE_COLUMN_NB_OUDLERS,
 									DatabaseHelper.PRISE_COLUMN_PETITE_AU_BOUT,
 									DatabaseHelper.PRISE_COLUMN_POIGNEE,
-									DatabaseHelper.PRISE_COLUMN_CHELEM
+									DatabaseHelper.PRISE_COLUMN_CHELEM,
+									DatabaseHelper.PRISE_COLUMN_MISERE
 								}, 
 								DatabaseHelper.PRISE_COLUMN_GAME_ID + DatabaseHelper.EQUALS_VARIABLE, 
 								new String[]{String.valueOf(gameID)}, 
@@ -177,4 +185,25 @@ public class PriseDatabaseRepository extends AbstractDatabaseRepository<Prise> {
 		close();
 	}
 
+	private String serializeMiseres(Prise entite) {
+		StringBuilder builder = new StringBuilder();
+		if(! entite.getMiseres().isEmpty()) {			
+			for(Player p : entite.getMiseres()) {
+				builder.append(p.getId());
+				builder.append(MISERE_SEPARATOR);
+			}
+		}
+		return builder.toString();
+	}
+
+	private List<Player> deserializeMiseres(String serializedIds) {
+		List<Player> players = new ArrayList<Player>();
+		if(serializedIds != null && serializedIds.length() > 0) {
+			String[] ids = serializedIds.split(MISERE_SEPARATOR);
+			for(String stringId : ids) {
+				players.add(new Player(Integer.valueOf(stringId), null, null, true));
+			}
+		}
+		return players;
+	}
 }

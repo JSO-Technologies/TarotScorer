@@ -168,6 +168,23 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
         </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/misere" />
+
+            <TextView
+                android:id="@+id/priseDetailsMisere"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </TableRow>
     </TableLayout>
 
     <Button

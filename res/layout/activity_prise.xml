@@ -698,11 +698,92 @@
             android:layout_below="@+id/priseOptionsHR2View"
             android:background="#DD000000"
             android:visibility="gone" >
+            
+            <!-- Misères -->
+            
+            <LinearLayout
+                android:id="@+id/priseMisereLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:orientation="vertical">
+                
+	            <TextView
+		            android:id="@+id/priseMisereTextView"
+		            style="@style/prise_option_normal_text"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center"
+		            android:text="@string/misere" />
+		
+		        <View
+		            android:id="@+id/priseMisereHRView"
+		            style="@style/priseHR"
+		            android:layout_width="match_parent"
+		            android:layout_height="2dp"/>
+		        
+		        <LinearLayout
+	                android:id="@+id/priseMisereCheckboxLayout"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:gravity="center"
+	                android:orientation="horizontal"
+	                android:weightSum="5">
+                    
+			        <CheckBox
+				        android:id="@+id/priseMisere1Checkbox"
+				        android:layout_width="0dip"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="20dip"
+				        android:visibility="gone"
+				        android:layout_weight="1" />
+			        
+			        <CheckBox
+				        android:id="@+id/priseMisere2Checkbox"
+				        android:layout_width="0dip"
+				        android:layout_height="wrap_content"
+				        android:visibility="gone"
+				        android:layout_weight="1" />
+			        
+			        <CheckBox
+				        android:id="@+id/priseMisere3Checkbox"
+				        android:layout_width="0dip"
+				        android:layout_height="wrap_content"
+				        android:visibility="gone"
+				        android:layout_weight="1" />
+			        
+			        <CheckBox
+				        android:id="@+id/priseMisere4Checkbox"
+				        android:layout_width="0dip"
+				        android:layout_height="wrap_content"
+				        android:visibility="gone"
+				        android:layout_weight="1" />
+			        
+			        <CheckBox
+				        android:id="@+id/priseMisere5Checkbox"
+				        android:layout_width="0dip"
+				        android:layout_height="wrap_content"
+				        android:visibility="gone"
+				        android:layout_weight="1" />
+		        </LinearLayout>
+		
+	        </LinearLayout>
 
             <!-- Petite au bout -->
+            <View
+                android:id="@+id/priseInOptionsHR0View"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/priseMisereLayout"
+                android:layout_marginLeft="30dip"
+                android:layout_marginRight="30dip"
+                android:layout_marginTop="10dp"
+                android:background="#777777" />
 
             <LinearLayout
                 android:id="@+id/prisePetiteAuBoutLayout"
+                android:layout_below="@id/priseInOptionsHR0View"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"

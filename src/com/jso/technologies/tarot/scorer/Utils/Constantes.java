@@ -54,6 +54,7 @@ public class Constantes {
 	public static final int PETITE_AU_BOUT_ELEMENT = 5;
 	public static final int POIGNEE_ELEMENT = 6;
 	public static final int CHELEM_ELEMENT = 7;
+	public static final int MISERE_ELEMENT = 8;
 
 	//points suivant contrat
 	public static final int NO_OUDLER_POINTS = 56;
@@ -77,6 +78,9 @@ public class Constantes {
 	public static final int NO_PETITE_AU_BOUT_BONUS = 0;
 	public static final int PETITE_AU_BOUT_BONUS = 10;
 	public static final int LOST_PETITE_AU_BOUT_BONUS = -10;
+	
+	//bonus misere
+	public static final int MISERE_BONUS = 10;
 
 	//bonus chelem
 	public static final int NO_CHELEM_BONUS = 0;

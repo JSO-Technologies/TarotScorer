@@ -190,7 +190,7 @@ public class TarotRules {
 	}
 
 	/**
-	 * M�thode calculant les points pour chaque joueur pour une prise
+	 * Methode calculant les points pour chaque joueur pour une prise
 	 * 
 	 * @param currentPrise
 	 * @param players
@@ -205,7 +205,7 @@ public class TarotRules {
 		//prime poignee
 		points += getPoigneeBonus(currentPrise.getPoignee());
 
-		//positif ou n�gatif
+		//positif ou negatif
 		boolean contratSucceed = contractSucceed(currentPrise.getNbOudlers(), currentPrise.getPoints());
 		if(!contratSucceed) {
 			points = -points;
@@ -239,6 +239,21 @@ public class TarotRules {
 				currentPriseScore.put(player, -points);
 			}
 
+		}
+		
+		//prime de misère
+		if(! currentPrise.getMiseres().isEmpty()) {
+			for(Player misereux : currentPrise.getMiseres()) {				
+				for(Player p : players) {
+					Integer playerScore = currentPriseScore.get(p);
+					if(p.equals(misereux)) {
+						currentPriseScore.put(p, playerScore + (Constantes.MISERE_BONUS * (players.size() - 1)));
+					}
+					else {
+						currentPriseScore.put(p, playerScore - Constantes.MISERE_BONUS);
+					}
+				}
+			}
 		}
 
 		return currentPriseScore;

@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -50,6 +51,7 @@ public class PriseActivity extends Activity {
 	private List<RelativeLayout> preneursRadioLayout;
 	private List<RadioButton> preneurRadios;
 	private List<RadioButton> appelRadios;
+	private List<CheckBox> misereCheckBoxes;
 	private List<RadioButton> petiteAuBoutRadios;
 	private List<RadioButton> poigneeRadios;
 	private List<RadioButton> chelemRadios;
@@ -156,6 +158,13 @@ public class PriseActivity extends Activity {
 		appelRadios.add((RadioButton) findViewById(R.id.priseAppel3RadioButton));
 		appelRadios.add((RadioButton) findViewById(R.id.priseAppel4RadioButton));
 		appelRadios.add((RadioButton) findViewById(R.id.priseAppel5RadioButton));
+		
+		misereCheckBoxes = new ArrayList<CheckBox>();
+		misereCheckBoxes.add((CheckBox) findViewById(R.id.priseMisere1Checkbox));
+		misereCheckBoxes.add((CheckBox) findViewById(R.id.priseMisere2Checkbox));
+		misereCheckBoxes.add((CheckBox) findViewById(R.id.priseMisere3Checkbox));
+		misereCheckBoxes.add((CheckBox) findViewById(R.id.priseMisere4Checkbox));
+		misereCheckBoxes.add((CheckBox) findViewById(R.id.priseMisere5Checkbox));
 
 		petiteAuBoutRadios = new ArrayList<RadioButton>();
 		petiteAuBoutRadios.add((RadioButton) findViewById(R.id.prisePasPetiteAuBoutRadio));
@@ -214,6 +223,10 @@ public class PriseActivity extends Activity {
 				//appel radio
 				appelRadios.get(i).setOnCheckedChangeListener(new PriseRadioSelectionListener<Player>(this, Constantes.CALL_ELEMENT, appelRadios, i, player));
 				appelRadiosLayout.get(i).setOnClickListener(new PerformClickListener(appelRadios.get(i)));
+				
+				//miseres
+				misereCheckBoxes.get(i).setVisibility(View.VISIBLE);
+				misereCheckBoxes.get(i).setOnCheckedChangeListener(new PriseCheckboxSelectionListener<Player>(this, Constantes.MISERE_ELEMENT, player));
 			}
 		}
 
@@ -356,6 +369,7 @@ public class PriseActivity extends Activity {
 		for(int i = 0; i < players.size(); ++i){
 			preneurRadios.get(i).setChecked(false);
 			appelRadios.get(i).setChecked(false);
+			misereCheckBoxes.get(i).setChecked(false);
 		}
 
 		//prise : contrat
@@ -456,5 +470,9 @@ public class PriseActivity extends Activity {
 
 	public DatabaseGameAction getDatabaseGameAction() {
 		return databaseGameAction;
+	}
+	
+	public List<CheckBox> getMisereCheckBoxes() {
+		return misereCheckBoxes;
 	}
 }

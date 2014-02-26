@@ -14,7 +14,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	private static final int DATABASE_VERSION = 3;
+	private static final int DATABASE_VERSION = 4;
 	private static final String BASE_NAME = "tarot_scorer.db";
 
 	public static final String EQUALS_VARIABLE = "=?";
@@ -53,6 +53,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public static final int PRISE_NUM_COLUMN_POIGNEE = 8;
 	public static final String PRISE_COLUMN_CHELEM = "CHELEM";
 	public static final int PRISE_NUM_COLUMN_CHELEM = 9;
+	public static final String PRISE_COLUMN_MISERE = "MISERE";
+	public static final int PRISE_NUM_COLUMN_MISERE = 10;
 	
 	// Table 'Prise' 
 	public static final String GAMES_TABLE_NAME = "games";
@@ -116,7 +118,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 					PRISE_COLUMN_NB_OUDLERS + " INTEGER NOT NULL, " +
 					PRISE_COLUMN_PETITE_AU_BOUT + " INTEGER NOT NULL, " +
 					PRISE_COLUMN_POIGNEE + " INTEGER NOT NULL, " +
-					PRISE_COLUMN_CHELEM + " INTEGER NOT NULL);";
+					PRISE_COLUMN_CHELEM + " INTEGER NOT NULL, " + 
+					PRISE_COLUMN_MISERE + " VARCHAR(30) );";
 	
 	private static final String CREATION_GAMES_TABLE_REQUEST = 
 			"CREATE TABLE " + GAMES_TABLE_NAME + " (" + 
@@ -149,6 +152,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	private static final String ALTER_PLAYERS_ADD_ENABLED = 
 			"ALTER TABLE " + PLAYERS_TABLE_NAME + " ADD " + PLAYER_COLUMN_ENABLED + " TINYINT DEFAULT '1'";
+	
+	private static final String ALTER_PRISE_ADD_MISERE = 
+			"ALTER TABLE " + PRISES_TABLE_NAME + " ADD " + PRISE_COLUMN_MISERE + " VARCHAR(30) DEFAULT ''";
 
 
 	public DatabaseHelper(Context context, CursorFactory factory) {
@@ -181,15 +187,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				db.execSQL(INSERT_PLAYERS_IN_CLASSIFICATION_OPTION);
 				db.execSQL(ALTER_PLAYERS_ADD_ENABLED);
 				break;
-
+			case 4:
+				db.execSQL(CREATE_OPTIONS_TABLE_REQUEST);
+				db.execSQL(INSERT_PLAYERS_IN_CLASSIFICATION_OPTION);
+				db.execSQL(ALTER_PLAYERS_ADD_ENABLED);
+				db.execSQL(ALTER_PRISE_ADD_MISERE);
+				break;
 			default:
 				break;
 			}
 			break;
+			
 		case 2:
 			switch (newVersion) {
 			case 3:
 				db.execSQL(ALTER_PLAYERS_ADD_ENABLED);
+				break;
+			case 4:
+				db.execSQL(ALTER_PLAYERS_ADD_ENABLED);
+				db.execSQL(ALTER_PRISE_ADD_MISERE);
+				break;
+			default:
+				break;
+			}
+			break;
+			
+		case 3:
+			switch (newVersion) {
+			case 4:
+				db.execSQL(ALTER_PRISE_ADD_MISERE);
 				break;
 			default:
 				break;
