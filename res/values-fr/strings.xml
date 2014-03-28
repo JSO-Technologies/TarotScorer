@@ -101,6 +101,8 @@
     <string name="player_list">Liste des joueurs</string>
     <string name="classement">Classement</string>
     <string name="game_list">Liste des parties</string>
+    <string name="backup">Sauvegarder</string>
+    <string name="restore">Restaurer</string>
 	<string name="a_propos">A Propos</string>
 
     <!-- Petite au bout -->
@@ -174,4 +176,13 @@
     <string name="edit_player">Modifier joueur</string>
     <string name="reset_player">Réinitialisation</string>
     <string name="delete_player">Supprimer joueur</string>
+    
+    <!-- Backup -->
+    <string name="backup_confirmation">Sauver les données sur la carte SD ?\n\nATTENTION : toute sauvegarde existante sera écrasée !</string>
+    <string name="backup_success">Sauvegarde faite sur la carte SD</string>
+    <string name="backup_interrupted">Sauvegarde interrompue</string>
+    <string name="backup_sd_error">Carte SD non disponible</string>
+    <string name="restore_confirmation">Restaurer les données depuis la carte SD ?\n\nATTENTION : les données existantes vont être écrasées !</string>
+    <string name="backup_doesnt_exist">Aucune sauvegarde présente</string>
+    <string name="restore_success">Restauration complète</string>
 </resources>

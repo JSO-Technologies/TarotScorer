@@ -1,7 +1,7 @@
 package com.jso.technologies.tarot.scorer.db;
 
-import com.jso.technologies.tarot.scorer.Utils.Constantes;
-
+import static com.jso.technologies.tarot.scorer.Utils.Constantes.DB_NAME;
+import static com.jso.technologies.tarot.scorer.Utils.Constantes.PLAYERS_IN_CLASSIFICATION_ID;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -15,7 +15,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
 	private static final int DATABASE_VERSION = 4;
-	private static final String BASE_NAME = "tarot_scorer.db";
 
 	public static final String EQUALS_VARIABLE = "=?";
 	public static final String COUNT_REQUEST = "SELECT COUNT(*) FROM {0} WHERE {1}";
@@ -148,7 +147,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	private static final String INSERT_PLAYERS_IN_CLASSIFICATION_OPTION = 
 			"INSERT INTO " + OPTIONS_TABLE_NAME + " VALUES(" +
-					Constantes.PLAYERS_IN_CLASSIFICATION_ID + ", null);";
+					PLAYERS_IN_CLASSIFICATION_ID + ", null);";
 	
 	private static final String ALTER_PLAYERS_ADD_ENABLED = 
 			"ALTER TABLE " + PLAYERS_TABLE_NAME + " ADD " + PLAYER_COLUMN_ENABLED + " TINYINT DEFAULT '1'";
@@ -158,7 +157,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 	public DatabaseHelper(Context context, CursorFactory factory) {
-		super(context, BASE_NAME, factory, DATABASE_VERSION);
+		super(context, DB_NAME, factory, DATABASE_VERSION);
 	}
 
 	@Override

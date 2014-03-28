@@ -67,7 +67,7 @@
     <string name="no_game">No games</string>
     <string name="launch_game">Select a game to play</string>
     <string name="mail_copied">Email address copied to clipboard</string>
-    <string name="prise_score_shortcut">Detailled Score</string>
+    <string name="prise_score_shortcut">Detailed Score</string>
     <string name="prise_graphics_shortcut">Analyse</string>
     
     <!-- Classement -->
@@ -101,6 +101,8 @@
     <string name="player_list">List of players</string>
     <string name="classement">Classification</string>
     <string name="game_list">List of games</string>
+    <string name="backup">Backup</string>
+    <string name="restore">Restore</string>
 	<string name="a_propos">About</string>
 
     <!-- Petite au bout -->
@@ -174,4 +176,13 @@
     <string name="edit_player">Edit player</string>
     <string name="reset_player">Reset player</string>
     <string name="delete_player">Delete player</string>
+    
+    <!-- Backup -->
+    <string name="backup_confirmation">Save data on SD card ?\n\nWARNING : this will erase existing backup !</string>
+    <string name="backup_success">Backup saved on SD card</string>
+    <string name="backup_interrupted">Backup has been interrupted</string>
+    <string name="backup_sd_error">SD card not available</string>
+    <string name="restore_confirmation">Restore data from SD card ?\n\nWARNING : this will erase existing data !</string>
+    <string name="backup_doesnt_exist">No existing backup</string>
+    <string name="restore_success">Data restores from SD card</string>
 </resources>

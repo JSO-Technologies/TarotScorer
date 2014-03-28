@@ -2,9 +2,6 @@ package com.jso.technologies.tarot.scorer.Utils;
 
 import android.graphics.Color;
 
-
-
-
 public class Constantes {
 
 	public static final String CREATED_PLAYER = "CREATED_PLAYER";
@@ -16,8 +13,14 @@ public class Constantes {
 	public static final String DELETED_PRISE = "DELETED_PRISE";
 	public static final String SELECTED_PLAYER_ID = "SELECTED_PLAYER_ID";
 	public static final String REFRESH = "REFRESH";
-
+	
 	public static final int TOTAL_POINTS = 91;
+
+	//application and db
+	public static final String PACKAGE_NAME = "com.jso.technologies.tarot.scorer";
+	public static final String DB_NAME = "tarot_scorer.db";
+	public static final String BACKUP_PATH = DB_NAME;
+	public static final String CURRENT_DB_PATH = "//data//" + PACKAGE_NAME + "//databases//" + DB_NAME;
 
 	//request code
 	public static final int DETAILLED_SCORE = 0;

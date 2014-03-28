@@ -13,8 +13,6 @@ import com.jso.technologies.tarot.scorer.common.enumeration.PriseEnum;
 
 /**
  * Activity : Page d'accueil
- * @author Jimmy
- *
  */
 public class HomePageActivity extends Activity {
 
@@ -22,6 +20,8 @@ public class HomePageActivity extends Activity {
 	private TextView playerList;
 	private TextView classement;
 	private TextView gameList;
+	private TextView backup;
+	private TextView restore;
 	private TextView aPropos;
 
 	@Override
@@ -34,6 +34,8 @@ public class HomePageActivity extends Activity {
 		playerList = (TextView)findViewById(R.id.homePlayerList);
 		classement = (TextView)findViewById(R.id.homeClassement);
 		gameList = (TextView)findViewById(R.id.homeGameList);
+		backup = (TextView)findViewById(R.id.homeBackup);
+		restore = (TextView)findViewById(R.id.homeRestore);
 		aPropos = (TextView)findViewById(R.id.homeAPropos);
 		
 		//listener
@@ -41,6 +43,8 @@ public class HomePageActivity extends Activity {
 		playerList.setOnClickListener(new StartPlayerListListener(this));
 		classement.setOnClickListener(new StartClassementListener(this));
 		gameList.setOnClickListener(new StartGameListListener(this));
+		backup.setOnClickListener(new StartBackupListener(this));
+		restore.setOnClickListener(new StartRestoreListener(this));
 		aPropos.setOnClickListener(new StartAProposeListener(this));
 	}
 	
